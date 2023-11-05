@@ -6,11 +6,14 @@ export interface Order {
  * The datafeed server returns an array of ServerRespond with 2 stocks.
  * We do not have to manipulate the ServerRespond for the purpose of this task.
  */
-export interface ServerRespond {
-  stock: string,
-  top_bid: Order,
-  top_ask: Order,
+export interface Row {
+  price_abc: number,
+  price_def: number,
+  ratio: number,
+  upper_bound: number,
+  lower_bound: number,
   timestamp: Date,
+  trigger_alert: number | undefined
 }
 
 class DataStreamer {
